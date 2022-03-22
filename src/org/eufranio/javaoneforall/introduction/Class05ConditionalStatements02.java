@@ -14,5 +14,9 @@ public class Class05ConditionalStatements02 {
         }
 
         System.out.println("You're in: " + category + " category");
+
+        category = age < 15 ? "Junior" : age < 18 ? "Senior" : "Master";
+
+        System.out.println("You're category by ternary operator: " + age);
     }
 }
