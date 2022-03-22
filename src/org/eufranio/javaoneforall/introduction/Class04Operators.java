@@ -50,5 +50,11 @@ public class Class04Operators {
 
         System.out.println("isLegalOlder Than Thirty: " + isLegalOlderThanThirty);
         System.out.println("isYoungOlder Than Thirty: " + isLegalYoungerThanThirty);
+
+        if (age > 18) {
+            System.out.println("You can get driver license");
+        } else {
+            System.out.println("You can not get driver license");
+        }
     }
 }
