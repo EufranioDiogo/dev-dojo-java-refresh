@@ -7,7 +7,8 @@ public class CalculatorTest01 {
         Calculator calculator = new Calculator();
 
         int number1 = 10;
-        int number2 = 23;
+
+        int number2 = 25;
 
         int sum;
         sum = calculator.sum(number1, number2);
@@ -16,5 +17,6 @@ public class CalculatorTest01 {
 
         System.out.println("Division: " + division);
         System.out.println("Sum: " + sum);
+
     }
 }
