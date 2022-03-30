@@ -6,6 +6,7 @@ public class Student {
     private char gender;
 
     //Cohesion: the class do one and only one specific thing
+    //Specific obligation
 
     public Student() {
     }
@@ -38,6 +39,10 @@ public class Student {
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+
+    public void print() {
+        System.out.println(this);
     }
 
     @Override
