@@ -5,6 +5,23 @@ public class Anime {
     private String type;
     private int episodes;
     private String status;
+    private String studioName;
+
+
+    public Anime() {
+        System.out.println("Criando objecto");
+    }
+
+    public Anime(String name, String type, int episodes, String status) {
+        this();
+        this.init(name, type, episodes);
+        this.status = status;
+    }
+
+    public Anime(String name, String type, int episodes, String status, String studioName) {
+        this(name, type, episodes, status);
+        this.studioName = studioName;
+    }
 
     public void init(String name, String type, int episodes) {
         this.name = name;
@@ -13,6 +30,7 @@ public class Anime {
     }
 
     public void init(String name, String type, int episodes, String status) {
+        System.out.println("OLa mund");
         this.init(name, type, episodes);
         this.status = status;
     }
@@ -21,6 +39,7 @@ public class Anime {
         System.out.println("Type: " + this.type);
         System.out.println("Episodes: " + this.episodes);
         System.out.println("Status: " + this.status);
+        System.out.println("Studio: " + this.studioName);
     }
     public String getType() {
         return type;
@@ -52,5 +71,13 @@ public class Anime {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getStudioName() {
+        return studioName;
+    }
+
+    public void setStudioName(String studioName) {
+        this.studioName = studioName;
     }
 }
