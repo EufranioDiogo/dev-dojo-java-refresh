@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ResourceBundleManager">
+    <file url="file://$PROJECT_DIR$/src/labels.properties" />
+    <file url="file://$PROJECT_DIR$/src/labels_en_US.properties" />
+    <file url="file://$PROJECT_DIR$/src/labels_pt_AO.properties" />
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/src/labels.properties" />
+      <file value="file://$PROJECT_DIR$/src/labels_en_US.properties" />
+      <file value="file://$PROJECT_DIR$/src/labels_pt.properties" />
+      <file value="file://$PROJECT_DIR$/src/labels_pt_AO.properties" />
+      <base-name>labels</base-name>
+    </custom-resource-bundle>
+  </component>
+</project>
