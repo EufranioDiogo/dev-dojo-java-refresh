@@ -2,7 +2,7 @@ package org.eufranio.javaoneforall.introduction;
 
 public class Class05ConditionalStatements04 {
     public static void main(String[] args) {
-        float annualSalary = 1000;
+        float annualSalary = 68503;
         float taxes;
         float taxesAmountBasedInAnnualSalary;
 

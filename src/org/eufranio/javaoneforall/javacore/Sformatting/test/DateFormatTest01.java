@@ -1,4 +1,4 @@
-package org.eufranio.javaoneforall.javacore.Rdates.test;
+package org.eufranio.javaoneforall.javacore.Sformatting.test;
 
 import java.text.DateFormat;
 import java.util.Calendar;
