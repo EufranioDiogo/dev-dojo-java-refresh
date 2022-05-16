@@ -9,7 +9,7 @@ public class ExceptionTest01 {
     }
 
     private static void customFileCreator() {
-        File file = new File("folder/mathFunctions.js ");
+        File file = new File("folder/mathFunctions.js");
 
         try {
             boolean fileIsCreated = file.createNewFile();
