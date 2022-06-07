@@ -4,7 +4,6 @@ import org.eufranio.javaoneforall.javacore.Xserialization.domain.Seminar;
 import org.eufranio.javaoneforall.javacore.Xserialization.domain.Student;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
