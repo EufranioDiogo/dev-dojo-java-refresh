@@ -17,11 +17,16 @@ public class CarSort {
     public static void main(String[] args) {
         List<Car> listOfCars = new ArrayList<>();
 
+        Car car1 = new Car(5, "M8", "BMW", 1_000_000);
+        Car car2 = new Car(3, "SE10", "Mercedes", 2_000_000);
+        Car car3 = new Car(2, "Alto", "Porsche", 3_000_000);
+        Car car4 = new Car(1, "Alto 800", "Suzuki", 4_000_000);
+
         listOfCars.addAll(Arrays.asList(
-                new Car(5, "M8", "BMW", 1_000_000),
-                new Car(3, "SE10", "Mercedes", 2_000_000),
-                new Car(2, "Alto", "Porsche", 3_000_000),
-                new Car(1, "Alto 800", "Suzuki", 4_000_000)
+                car1,
+                car2,
+                car3,
+                car4
         ));
 
         System.out.println("-----------------------------");
@@ -45,6 +50,21 @@ public class CarSort {
             System.out.println(car);
             return null;
         }).collect(Collectors.toList());
+
+        Collections.sort(listOfCars);
+        System.out.println("\nLocate car3");
+        int resultIndex = Collections.binarySearch(listOfCars, car3);
+
+        System.out.println("Result Index: " + resultIndex);
+
+        System.out.println("\nLocate car M8 - BMW - By Title");
+        CarComparatorByModel carComparatorByModel = new CarComparatorByModel();
+
+        Collections.sort(listOfCars, carComparatorByModel);
+
+        int resultIndex2 = Collections.binarySearch(listOfCars, car1, carComparatorByModel);
+
+        System.out.println("Result Index: " + resultIndex2);
 
 
     }
