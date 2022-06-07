@@ -9,6 +9,8 @@ public class Car implements Comparable<Car> {
     private String model;
     private String brand;
     private double price;
+    private int quantity;
+
 
     public Car(int id, String model, String brand, double price) {
         this.id = id;
@@ -17,27 +19,10 @@ public class Car implements Comparable<Car> {
         this.price = price;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return id == car.id && Objects.equals(model, car.model) && Objects.equals(brand, car.brand);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, model, brand);
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", brand='" + brand + '\'' +
-                ", price='" + price + '\'' +
-                '}';
+    public Car(int id, String model, String brand, double price, int quantity) {
+        this(id, model, brand, price);
+        this.quantity = quantity;
     }
 
     public String getModel() {
@@ -65,6 +50,39 @@ public class Car implements Comparable<Car> {
     public Car setPrice(double price) {
         this.price = price;
         return this;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Car setQuantity(int quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return id == car.id && Objects.equals(model, car.model) && Objects.equals(brand, car.brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, model, brand);
     }
 
     @Override
