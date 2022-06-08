@@ -47,4 +47,14 @@ public class Smartphone {
         this.price = price;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
