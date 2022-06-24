@@ -15,6 +15,10 @@ class Dog extends Animal {
 
 public class AnonymousClassesTest01 {
     public static void main(String[] args) {
+        Animal dog1 = new Dog();
+
+        dog1.walk();
+
         Animal animal = new Animal(){
             @Override
             public void walk() {
@@ -24,5 +28,22 @@ public class AnonymousClassesTest01 {
 
         animal.walk();
 
+        Dog dog2 = new Dog() {
+            @Override
+            public void walk() {
+                System.out.println("Running");
+            }
+        };
+
+        dog2.walk();
+
+        Animal dog3 = new Dog() {
+            @Override
+            public void walk() {
+                super.walk();
+            }
+        };
+
+        dog3.walk();
     }
 }

@@ -10,6 +10,7 @@ class CarComparator implements Comparator<Car> {
 
     @Override
     public int compare(Car o1, Car o2) {
+        System.out.println(this.toString());
         return o1.getName().compareTo(o2.getName());
     }
 }
@@ -23,9 +24,12 @@ public class AnonymousClassesTest02 {
         cars.sort(new Comparator<Car>() {
             @Override
             public int compare(Car o1, Car o2) {
+                System.out.println(this.toString());
                 return o1.getName().compareTo(o2.getName());
             }
         });
+
+        cars.sort(new CarComparator());
 
         System.out.println(cars);
     }
