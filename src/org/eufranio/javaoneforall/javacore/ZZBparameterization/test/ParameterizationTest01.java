@@ -1,6 +1,7 @@
 package org.eufranio.javaoneforall.javacore.ZZBparameterization.test;
 
 import org.eufranio.javaoneforall.javacore.ZZBparameterization.domain.Car;
+import org.eufranio.javaoneforall.javacore.ZZBparameterization.interfaces.CarPredicate;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,4 +33,5 @@ public class ParameterizationTest01 {
                 .filter(car -> car.getYear() < year)
                 .collect(Collectors.toList());
     }
+
 }
