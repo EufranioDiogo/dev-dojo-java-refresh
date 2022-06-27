@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class LambdaTest01 {
     public static void main(String[] args) {
@@ -13,7 +14,11 @@ public class LambdaTest01 {
         forEach(names, System.out::println);
         forEach(numbers, System.out::println);
 
-        System.out.println(modify(names, name -> name + " Diogo"));
+        System.out.println(modify(names, String::length));
+
+        List<String> namesWithUcaSuffix = modify(names, (name) -> name + " - UCAN");
+
+        System.out.println(namesWithUcaSuffix);
     }
     private static <T> void forEach(List<T> list, Consumer<T> consumer) {
         for (T e : list) {
@@ -21,12 +26,9 @@ public class LambdaTest01 {
         }
     }
 
-    private static <T, R> List<R> modify(List<T> list, Function<T, R> function) {
-        List<R> result = new ArrayList<>();
-
-        list.forEach(element -> {
-            result.add(function.apply(element));
-        });
-        return result;
+    public static <T,R> List<R> modify(List<T> names, Function<T, R> function) {
+        return names.stream()
+                .map(function::apply)
+                .collect(Collectors.toList());
     }
 }
