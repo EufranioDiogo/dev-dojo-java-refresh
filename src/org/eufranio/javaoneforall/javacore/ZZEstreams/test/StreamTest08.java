@@ -14,7 +14,6 @@ public class StreamTest08 {
             new LightNovel("L5", 1300),
             new LightNovel("L5", 1300),
             new LightNovel("L6", 10390),
-
             new LightNovel("L6", 15390)
     ));
 

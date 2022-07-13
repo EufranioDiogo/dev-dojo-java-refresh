@@ -3,11 +3,11 @@ package org.eufranio.javaoneforall.javacore.ZZEstreams.test;
 import org.eufranio.javaoneforall.javacore.ZZEstreams.domain.LightNovel;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class StreamTest03 {
+public class StreamTest11 {
     private static List<LightNovel> lightNovels = new ArrayList<>(List.of(
             new LightNovel("L1", 1000),
             new LightNovel("L2", 3292),
@@ -16,24 +16,14 @@ public class StreamTest03 {
             new LightNovel("L5", 1300),
             new LightNovel("L5", 1300),
             new LightNovel("L6", 10390),
-            new LightNovel("L6", 10090)
+            new LightNovel("L6", 15390)
     ));
 
     public static void main(String[] args) {
-        // BAD: lightNovels.stream().forEach(System.out::println);
-        // GOOD: lightNovels.forEach(System.out::println);
+        System.out.println(lightNovels.stream().count());
+        lightNovels.stream().collect(Collectors.counting());
 
-        Stream<LightNovel> stream = lightNovels.stream();
-
-        long count = stream
-                .filter(ln -> ln.getPrice() < 4000)
-                .distinct()
-                .count();
-
-        System.out.println(count);
-
-
-        // Once you used a terminal operation
-
+        lightNovels.stream().max(Comparator.comparing(LightNovel::getPrice)).ifPresent(System.out::println);
+        lightNovels.stream().collect(Collectors.maxBy(Comparator.comparing(LightNovel::getPrice))).ifPresent(System.out::println);
     }
 }

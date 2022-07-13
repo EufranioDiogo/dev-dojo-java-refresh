@@ -22,23 +22,22 @@ public class StreamTest06 {
 
 
     public static void main(String[] args) {
-        boolean isTrueContainsO = lightNovels.stream().anyMatch(ln -> ln.getTitle().equals("O"));
+        boolean isThereAnyPriceLowerThan1000 = lightNovels
+                .stream()
+                .anyMatch(lightNovel -> lightNovel.getPrice() < 1000);
 
-        System.out.println(isTrueContainsO);
+        boolean isEveryPricesGraterThan1000 = lightNovels.stream().allMatch(lightNovel -> lightNovel.getPrice() > 1000);
 
-        boolean allPricesAbove50_000 = lightNovels.stream().allMatch(ln -> ln.getPrice() > 50_000L);
-
-        System.out.println(allPricesAbove50_000);
+        System.out.println("isThereAnyPriceLowerThan1000 = " + isThereAnyPriceLowerThan1000);
+        System.out.println("isEveryPricesGraterThan1000 = " + isEveryPricesGraterThan1000);
 
         lightNovels
                 .stream()
-                .filter(ln -> ln.getPrice() > 10_000)
-                .findAny()
-                .ifPresent(System.out::println);
+                .distinct()
+                .filter(lightNovel -> lightNovel.getPrice() > 1500)
+                .sorted(Comparator.comparing(LightNovel::getPrice).reversed())
+                .forEach(System.out::println);
 
-        lightNovels
-                .stream()
-                .min(Comparator.comparing(LightNovel::getPrice).reversed())
-                .ifPresent(System.out::println);
+
     }
 }

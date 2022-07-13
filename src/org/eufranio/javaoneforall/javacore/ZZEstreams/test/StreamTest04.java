@@ -15,8 +15,8 @@ public class StreamTest04 {
         devdojo.add(developers);
         devdojo.add(students);
 
-        devdojo.stream().flatMap(Collection::stream).forEach(name -> {
-            System.out.println(name);
-        });
+        devdojo.stream()
+                .flatMap(Collection::stream)
+                .forEach(System.out::println);
     }
 }
